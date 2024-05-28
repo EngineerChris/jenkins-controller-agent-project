@@ -45,7 +45,6 @@ yum install git -y
 
 
 ## 3️⃣ Configure Nexus
-
 ### Login to Nexus
   A) CREATE MAVEN PROJECT ARTIFACT REPOSITORY
   - Click on the Admin Repository Secition
@@ -67,12 +66,12 @@ yum install git -y
 ## UPDATE YOUR MAVEN CONFIGURATIONS
 ### A) Update Maven (POM.xml & Settings.xml) File
   - Switch to the <'maven-sonarqube-nexus-jenkins'> project branch
-  - Update The Nexus IP Address In These Files
+  - Update The Nexus Private IP Address In These Files 
   - POM.xml: Line '64' and '68'
   - Settings.xml: Line '63' and '74'
   - Update The Nexus Repository As Well To Yours "if different"
 
-### B) Update The Maven 'User Data Scrip' With Your 'settings.xml' GitHub RawLink 
+### B) Update The Maven 'User Data Script' With Your 'settings.xml' GitHub RawLink 
  - Update the User data before Creating the Maven Build Instance/Env
  - Here: https://github.com/awanmbandi/realworld-cicd-pipeline-project/blob/jenkins-declarative-master-client-confg/runbooks/maven-install.md#2%EF%B8%8F%E2%83%A3-install-and-configure-java11-and-apache-maven
 
