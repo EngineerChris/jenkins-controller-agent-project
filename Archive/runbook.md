@@ -1,3 +1,5 @@
+# TOOLS INSTALLATION AND CONFIGURATION 
+
 ## 1️⃣ Launch an Amazon Linux 2 instance and Install Jenkins
 - name: Jenkins-Master
 - machine type: t2.medium
@@ -22,7 +24,28 @@ systemctl start jenkins
 yum install git -y
  ```
 
+## Set-up Nexus EC2 Server: "NexusArtifactory"
+- **name**: NexusArtifactory
+- **machine type**: t2.medium
+- **image/ami**: Amazon Linux 2
+- **Key pair**: Select or Create
+- **Security group ports**: 8081 (Allow traffic from anywhere 0.0.0.0/0), 22 (Allow traffic from anywhere 0.0.0.0/0)
+- **user-data-in-the-advanced-details**: https://github.com/EngineerChris/DevOps-Tools-Installation-Configuration/blob/main/maven-sonarqube-nexus-jenkins-install/nexus-install.sh
+
+
+## Set-up SonarQube EC2 Server: "SonarQube-Analysis" 
+- **name**: NexusArtifactory 
+- **machine type**: t2.medium 
+- **image/ami**: Ubuntu 20.4 
+- **Key pair**: Select or Create 
+- **Security group ports**: 9000 (Allow traffic from anywhere 0.0.0.0/0),  
+ and SSH 22 (Allow traffic from anywhere 0.0.0.0/0) 
+- **user-data-in-the-advanced-details**: https://github.com/EngineerChris/DevOps-Tools-Installation-Configuration/blob/main/maven-sonarqube-nexus-jenkins-install/sonarqube-install.sh 
+
+
+
 ## 3️⃣ Configure Nexus
+
 ### Login to Nexus
   A) CREATE MAVEN PROJECT ARTIFACT REPOSITORY
   - Click on the Admin Repository Secition
@@ -39,6 +62,7 @@ yum install git -y
       - Select: `Maven2(hosted)`
       - Name: `gradle-java-webapp-repository`
       - Click: `CREATE`
+
 
 ## UPDATE YOUR MAVEN CONFIGURATIONS
 ### A) Update Maven (POM.xml & Settings.xml) File
