@@ -45,31 +45,33 @@ yum install git -y
 
 
 ## 3️⃣ Configure Nexus
-### Login to Nexus
+### Login to Nexus Server Web UI
   A) CREATE MAVEN PROJECT ARTIFACT REPOSITORY
   - Click on the Admin Repository Secition
     - Click on `Repositories`
     - Click on `Create Repository`
-      - Select: `Maven2(hosted)`
-      - Name: `maven-java-webapp-repository`
+      - Select: `Maven2(hosted)` #SNAPSHOT as defined in POM.XML file line 13
+      - Name: `maven-java-webapp-repository` # this name must match the repo name in the repo-url 
       - Click: `CREATE`
 
   B) CREATE GRADLE PROJECT ARTIFACT REPOSITORY 
-  - Click on the Admin Repository Secition 
+  - Click on the Admin (gear) Repository Section 
     - Click on `Repositories`
     - Click on `Create Repository`
-      - Select: `Maven2(hosted)`
       - Name: `gradle-java-webapp-repository`
+      - Select: `Maven2(hosted)`  #SNAPSHOT as defined in BUILD.GRADLE file line 12
       - Click: `CREATE`
 
 
 ## UPDATE YOUR MAVEN CONFIGURATIONS
+
 ### A) Update Maven (POM.xml & Settings.xml) File
   - Switch to the <'maven-sonarqube-nexus-jenkins'> project branch
   - Update The Nexus Private IP Address In These Files 
   - POM.xml: Line '64' and '68'
   - Settings.xml: Line '63' and '74'
   - Update The Nexus Repository As Well To Yours "if different"
+  - Update the username and password on the settings.xml
 
 ### B) Update The Maven 'User Data Script' With Your 'settings.xml' GitHub RawLink 
  - Update the User data before Creating the Maven Build Instance/Env
@@ -79,7 +81,7 @@ yum install git -y
  - Line: '31' - '38'
 
 ## UPDATE YOUR GRADLE CONFIGURATIONS
-### A) Update The Nexus IP Address & Repository Name For Gradle Project In The "build.gradle" File
+### A) Update The Nexus PrivateIP Address & Repository Name For Gradle Project In The "build.gradle" File
  - Switch to the <'gradle-sonarqube-nexus-jenkins'>
  - Line: '57'
 
