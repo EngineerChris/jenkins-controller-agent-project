@@ -1,6 +1,6 @@
 # TOOLS INSTALLATION AND CONFIGURATION 
 
-**Order of Setup Server Set-up**
+**Server Setup Order**
 - Jenkins-Controller/Master Server
 - Nexus Server
 - SonarQube Server
@@ -15,7 +15,7 @@
 - Key pair: Select or Create
 - Security group ports: 8080, 22
  
- ### Pass As User Data or Login and Install Jenkins 
+ #### Pass As User Data or Login and Install Jenkins 
  ```bash
 #!/bin/bash
 sudo su

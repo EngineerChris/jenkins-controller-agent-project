@@ -13,8 +13,8 @@ Solution: Need to pass an additional configuration for Password Authentication t
 Confirm that the *PasswordAuthentication yes* STRING is uncommented as shown in the screenshot below.
 Lastly, make sure to ADD the STRING (Line) *ChallengeResponseAuthentication yes* as shown also in the screenshot.
 Then *SAVE* the changes
-*RUN:* sudo systemstl restart ssh
-*RUN:* sudo systemstl restart sshd
+*RUN:* sudo systemctl restart ssh
+*RUN:* sudo systemctl restart sshd
 *Validate:* Re-Initiate The Jenkins Client(Gradle) Integration
 Confirm that your Gradle client was Added Successfully…
 ```
